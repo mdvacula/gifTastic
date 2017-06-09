@@ -62,12 +62,15 @@ var getGif = function(query){
     for(var i = 0; i < gifs.length;i++){
       var nGif = $("<a class='thumbnail nGif'>");
       var img = $("<img class='thumbnail'>");
+      var cap = $("<div class='caption'>");
       console.log(gifs[i].images.original.url);
       img.attr("src", gifs[i].images.original_still.url);
       img.attr("still_url", gifs[i].images.original_still.url);
       img.attr("animate_url", gifs[i].images.original.url);
       img.attr("animate", "false");
       nGif.append(img);
+      cap.append("<h4 class='text-center'>Rating: " + gifs[i].rating + "</h4>");
+      nGif.append(cap);
       $("#gDiv").append(nGif);
 
 
